@@ -41,6 +41,8 @@ def inverse_kinematic_optimization(chain,
     if initial_positions is None:
         raise ValueError("initial_positions must be specified")
 
+    ### TODO: Try using square objective position distance, square quat distance. ###
+
     # Compute squared distance to target
     def objective(x):
         y = chain.active_to_full(x, initial_positions)
